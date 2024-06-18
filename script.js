@@ -1,31 +1,23 @@
+const gameChoices = ["rock", "paper", "scissors"];
+
 function getComputerChoice() {
-  let randomNumber = Math.floor(Math.random() * 3) + 1;
+  let randomNumber = Math.floor(Math.random() * 3);
   console.log("Random number:", randomNumber);
-
-  if (randomNumber <= 1) {
-    return "rock";
-  } else if (randomNumber <= 2) {
-    return "paper";
-  } else {
-    return "scissors";
-  }
+  console.log("Computer chose: ", gameChoices[randomNumber]);
+  return gameChoices[randomNumber];
 }
-
-const computerChoice = getComputerChoice();
-console.log("Computer chose: ", computerChoice);
 
 function getHumanChoice() {
   let humanChoice = prompt("Choose between rock, paper, or scissors");
-  if (
-    humanChoice === "rock" ||
-    humanChoice === "paper" ||
-    humanChoice === "scissors"
-  ) {
+  humanChoice = humanChoice.toLowerCase();
+  if (gameChoices.includes(humanChoice)) {
+    console.log("Player chose:", humanChoice);
     return humanChoice;
   } else {
-    return "none";
+    console.log("Invalid choice");
+    return "invalid choice";
   }
 }
 
-const humanChoice = getHumanChoice();
-console.log("Player chose:", humanChoice);
+getComputerChoice();
+getHumanChoice();
