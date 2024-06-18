@@ -13,3 +13,19 @@ function getComputerChoice() {
 
 const computerChoice = getComputerChoice();
 console.log("Computer chose: ", computerChoice);
+
+function getHumanChoice() {
+  let humanChoice = prompt("Choose between rock, paper, or scissors");
+  if (
+    humanChoice === "rock" ||
+    humanChoice === "paper" ||
+    humanChoice === "scissors"
+  ) {
+    return humanChoice;
+  } else {
+    return "none";
+  }
+}
+
+const humanChoice = getHumanChoice();
+console.log("Player chose:", humanChoice);
