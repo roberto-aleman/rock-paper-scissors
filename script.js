@@ -4,7 +4,7 @@ function playGame() {
   let computerScore = 0;
   let humanScore = 0;
 
-  for (let i = 0; i < 5; i++) {
+  while (humanScore < 5 && computerScore < 5) {
     playRound();
   }
   console.log("Player: %s to Computer: %s", humanScore, computerScore);
